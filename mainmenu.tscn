@@ -1,0 +1,65 @@
+[gd_scene load_steps=4 format=3 uid="uid://bs50xd2hvkwya"]
+
+[ext_resource type="Theme" uid="uid://curvv4m7a3xk4" path="res://SandboxTheme.tres" id="1_p6p5q"]
+[ext_resource type="Script" path="res://new.gd" id="2_r4044"]
+[ext_resource type="Script" path="res://mods.gd" id="4_sn0d5"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_p6p5q")
+
+[node name="HFlowContainer" type="HFlowContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_right = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme = ExtResource("1_p6p5q")
+alignment = 1
+
+[node name="VFlowContainer" type="VFlowContainer" parent="HFlowContainer"]
+custom_minimum_size = Vector2(1, 650)
+layout_direction = 1
+layout_mode = 2
+theme = ExtResource("1_p6p5q")
+alignment = 1
+
+[node name="logo" type="Label" parent="HFlowContainer/VFlowContainer"]
+layout_mode = 2
+theme = ExtResource("1_p6p5q")
+theme_override_font_sizes/font_size = 23
+text = "Game logo here"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="new" type="Button" parent="HFlowContainer/VFlowContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.0
+theme = ExtResource("1_p6p5q")
+text = "play"
+script = ExtResource("2_r4044")
+
+[node name="mods" type="Button" parent="HFlowContainer/VFlowContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.0
+theme = ExtResource("1_p6p5q")
+text = "mods
+"
+script = ExtResource("4_sn0d5")
+
+[connection signal="pressed" from="HFlowContainer/VFlowContainer/new" to="HFlowContainer/VFlowContainer/new" method="_on_pressed"]
+[connection signal="pressed" from="HFlowContainer/VFlowContainer/mods" to="HFlowContainer/VFlowContainer/mods" method="_on_pressed"]

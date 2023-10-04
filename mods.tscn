@@ -1,0 +1,75 @@
+[gd_scene load_steps=6 format=3 uid="uid://c10qhk8w570dd"]
+
+[ext_resource type="Script" path="res://modmanager.gd" id="1_3lbc3"]
+[ext_resource type="Theme" uid="uid://curvv4m7a3xk4" path="res://SandboxTheme.tres" id="1_m3mu3"]
+[ext_resource type="Script" path="res://modlist.gd" id="2_730dk"]
+[ext_resource type="Script" path="res://back.gd" id="3_ehnry"]
+[ext_resource type="Script" path="res://reload.gd" id="4_qg5wb"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_m3mu3")
+script = ExtResource("1_3lbc3")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 2
+offset_right = 446.0
+offset_bottom = 648.0
+size_flags_vertical = 3
+theme = ExtResource("1_m3mu3")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 446.0
+grow_vertical = 2
+theme = ExtResource("1_m3mu3")
+
+[node name="list" type="Panel" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_m3mu3")
+script = ExtResource("2_730dk")
+
+[node name="FileDialog" type="FileDialog" parent="Panel/VBoxContainer/list"]
+title = "Open a File or Directory"
+position = Vector2i(463, 36)
+size = Vector2i(676, 610)
+visible = true
+theme = ExtResource("1_m3mu3")
+ok_button_text = "Open"
+dialog_close_on_escape = false
+file_mode = 3
+access = 2
+filters = PackedStringArray("*pck;godot mod file")
+show_hidden_files = true
+
+[node name="Button" type="Button" parent="Panel/VBoxContainer/list"]
+layout_mode = 0
+offset_right = 445.0
+offset_bottom = 41.0
+theme = ExtResource("1_m3mu3")
+text = "back"
+script = ExtResource("3_ehnry")
+
+[node name="Button2" type="Button" parent="Panel/VBoxContainer/list"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 44.0
+offset_right = 443.0
+offset_bottom = 81.0
+theme = ExtResource("1_m3mu3")
+text = "reload files"
+script = ExtResource("4_qg5wb")
+
+[connection signal="file_selected" from="Panel/VBoxContainer/list/FileDialog" to="." method="_on_file_dialog_file_selected"]
+[connection signal="files_selected" from="Panel/VBoxContainer/list/FileDialog" to="Panel/VBoxContainer/list" method="_on_file_dialog_files_selected"]
+[connection signal="pressed" from="Panel/VBoxContainer/list/Button" to="Panel/VBoxContainer/list" method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/list/Button" to="Panel/VBoxContainer/list/Button" method="_on_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/list/Button2" to="Panel/VBoxContainer/list/Button2" method="_on_pressed"]

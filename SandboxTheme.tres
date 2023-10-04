@@ -1,0 +1,17 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://curvv4m7a3xk4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jmvbr"]
+bg_color = Color(0.494118, 0.494118, 0.494118, 0.411765)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mobub"]
+bg_color = Color(0.172549, 0.145098, 0.372549, 1)
+border_color = Color(0.654902, 0.0705882, 0.666667, 1)
+border_blend = true
+
+[sub_resource type="SystemFont" id="SystemFont_rwsd1"]
+font_names = PackedStringArray("Agency FB")
+
+[resource]
+default_font = SubResource("SystemFont_rwsd1")
+Panel/styles/panel = SubResource("StyleBoxFlat_jmvbr")
+TabBar/styles/button_highlight = SubResource("StyleBoxFlat_mobub")
