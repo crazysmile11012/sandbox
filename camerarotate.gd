@@ -21,6 +21,10 @@ func _unhandled_input(event):
 			self.rotate_y(+0.1)
 		if event.pressed and event.is_action("camrollright"):
 			self.rotate_y(-0.1)
+		if event.pressed and event.is_action("zoom+"):
+			$Camera3D.translate(Vector3(0,0,1))
+		if event.pressed and event.is_action("zoom-"):
+			$Camera3D.translate(Vector3(0,0,-1))
 
 
 

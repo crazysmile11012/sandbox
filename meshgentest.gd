@@ -1,3 +1,4 @@
+'''
 #@tool
 extends MeshInstance3D
 @export var update = false
@@ -52,20 +53,20 @@ func generate():
 				if y == subdev or y == 0:
 					draw_sphere(Vector3(x,y,z),object,subdev)	
 					
-	'''
-	var vert = 0
-	for z in range(subdev+1):
-		for x in range(subdev+1):
-			for y in range(subdev+1):
-				surftool.add_index(vert+0)
-				surftool.add_index(vert+1)
-				surftool.add_index(vert+subdev+1)
-				surftool.add_index(vert+subdev+1)
-				surftool.add_index(vert+1)
-				surftool.add_index(vert+subdev+2)
-				vert+=1
-		vert+=1
-	'''
+	
+	#var vert = 0
+	#for z in range(subdev+1):
+		#for x in range(subdev+1):
+			#for y in range(subdev+1):
+				#surftool.add_index(vert+0)
+				#surftool.add_index(vert+1)
+				#surftool.add_index(vert+subdev+1)
+				#surftool.add_index(vert+subdev+1)
+				#surftool.add_index(vert+1)
+				#surftool.add_index(vert+subdev+2)
+			#	vert+=1
+		3vert+=1
+	
 	a_mesh = surftool.commit()
 	mesh = a_mesh
 	
@@ -88,3 +89,4 @@ func insscript(ins):
 	if ins.position.y >= subdev:
 		ins.position.y = subdev+1
 	
+'''

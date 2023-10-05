@@ -1,3 +1,4 @@
+CheckBox
 CSGPolygon3D
 CSGTorus3D
 Path3D
@@ -15,7 +16,6 @@ HBoxContainer
 VBoxContainer
 SphericalDeformer
 DeformableMeshInstance3D
-OrbitCamera
 OmniLight3D
 OptionButton
 CheckButton

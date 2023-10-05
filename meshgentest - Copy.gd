@@ -1,3 +1,4 @@
+'''
 @tool
 extends MeshInstance3D
 @export var update = false
@@ -69,4 +70,4 @@ func _process(delta):
 		gen_mesh()
 		update = false
 		
-		
+'''	

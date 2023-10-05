@@ -2,4 +2,10 @@ res://game.tscn
 res://SandboxTheme.tres
 res://mainmenu.tscn
 res://mods.tscn
-res://README.md
+res://gamemenu.gd
+res://addons/deformablemesh/dm_deformable_mesh.gd
+res://meshgentest.gd
+res://meshgentest - Copy.gd
+res://addons/orbit_camera/orbit_camera.gd
+res://new.gd
+res://camerarotate.gd
